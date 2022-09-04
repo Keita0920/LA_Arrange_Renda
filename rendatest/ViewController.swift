@@ -15,6 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet var timerLabel: UILabel!
     var timeCount = 16
     var createTimer:Timer?
+    @IBOutlet weak var abutton: UIButton!
+    @IBOutlet weak var kabutton: UIButton!
+    @IBOutlet weak var sabutton: UIButton!
+    @IBOutlet weak var tabutton: UIButton!
+    @IBOutlet weak var nabutton: UIButton!
+    @IBOutlet weak var habutton: UIButton!
+    @IBOutlet weak var mabutton: UIButton!
+    @IBOutlet weak var yabutton: UIButton!
+    @IBOutlet weak var rabutton: UIButton!
+    @IBOutlet weak var wabutton: UIButton!
+    @IBOutlet weak var retrybutton: UIButton!
     
     var a:[String] = ["あ","い","う","え","お"]
     var ka:[String] = ["か","き","く","け","こ"]
@@ -40,102 +51,73 @@ class ViewController: UIViewController {
         _t.text=""
         timerStart()
         timerLabel.text=""
+        retrybutton.isHidden=true
+        retrybutton.isEnabled=false
     }
-    
-    @IBAction func atap(){
+    func tap(initial:inout [String]){
         if n < 4{
             n += 1
-            t.text=a[n]
-        }else{
-            n = 0
-            t.text=a[n]
-        }
-    }
-    @IBAction func katap(){
-        if n < 4 {
-            n += 1
-            t.text=ka[n]
-            if n == 2{
+            t.text=initial[n]
+            if t.text == "く"{
                 _t.text="CLEAR"
+                abutton.isEnabled = false
+                kabutton.isEnabled = false
+                sabutton.isEnabled = false
+                tabutton.isEnabled = false
+                nabutton.isEnabled = false
+                habutton.isEnabled = false
+                mabutton.isEnabled = false
+                yabutton.isEnabled = false
+                rabutton.isEnabled = false
+                wabutton.isEnabled = false
+                retrybutton.isHidden=false
+                retrybutton.isEnabled=true
                 clearSound.play()
                 createTimer?.invalidate()
             }
         }else{
             n = 0
-            t.text=ka[n]
+            t.text=initial[n]
         }
+    }
+    func tap2(initial:inout [String]){
+        if _n < 2{
+            _n += 1
+            t.text=initial[_n]
+        }else{
+            _n = 0
+            t.text=initial[_n]
+        }
+    }
+    @IBAction func atap(){
+        tap(initial:&a)
+    }
+    @IBAction func katap(){
+        tap(initial:&ka)
     }
     @IBAction func satap(){
-        if n < 4{
-            n += 1
-            t.text=sa[n]
-        }else{
-            n = 0
-            t.text=sa[n]
-        }
+        tap(initial:&sa)
     }
     @IBAction func tatap(){
-        if n < 4{
-            n += 1
-            t.text=ta[n]
-        }else{
-            n = 0
-            t.text=ta[n]
-        }
+        tap(initial:&ta)
     }
     @IBAction func natap(){
-        if n < 4{
-            n += 1
-            t.text=na[n]
-        }else{
-            n = 0
-            t.text=na[n]
-        }
+        tap(initial:&na)
     }
     @IBAction func hatap(){
-        if n < 4{
-            n += 1
-            t.text=ha[n]
-        }else{
-            n = 0
-            t.text=ha[n]
-        }
+        tap(initial:&ha)
     }
     @IBAction func matap(){
-        if n < 4{
-            n += 1
-            t.text=ma[n]
-        }else{
-            n = 0
-            t.text=ma[n]
-        }
+        tap(initial:&ma)
     }
     @IBAction func yatap(){
-        if _n < 2{
-            _n += 1
-            t.text=ya[_n]
-        }else{
-            _n = 0
-            t.text=ya[_n]
-        }
+        tap2(initial:&ya)
     }
     @IBAction func ratap(){
-        if n < 4{
-            n += 1
-            t.text=ra[n]
-        }else{
-            n = 0
-            t.text=ra[n]
-        }
+        tap(initial:&ra)
     }
     @IBAction func watap(){
-        if _n < 2{
-            _n += 1
-            t.text=wa[_n]
-        }else{
-            _n = 0
-            t.text=wa[_n]
-        }
+        tap2(initial:&wa)
     }
     func timerStart() {
       createTimer = Timer.scheduledTimer(timeInterval:1, //1秒毎指定
@@ -152,8 +134,40 @@ class ViewController: UIViewController {
       if timeCount == 0 {
         createTimer?.invalidate()
         _t.text="FAILED"
+          abutton.isEnabled = false
+          kabutton.isEnabled = false
+          sabutton.isEnabled = false
+          tabutton.isEnabled = false
+          nabutton.isEnabled = false
+          habutton.isEnabled = false
+          mabutton.isEnabled = false
+          yabutton.isEnabled = false
+          rabutton.isEnabled = false
+          wabutton.isEnabled = false
+          retrybutton.isHidden=false
+          retrybutton.isEnabled=true
           failureSound.play()
       }
+    }
+    @IBAction func retry(){
+        abutton.isEnabled = true
+        kabutton.isEnabled = true
+        sabutton.isEnabled = true
+        tabutton.isEnabled = true
+        nabutton.isEnabled = true
+        habutton.isEnabled = true
+        mabutton.isEnabled = true
+        yabutton.isEnabled = true
+        rabutton.isEnabled = true
+        wabutton.isEnabled = true
+        retrybutton.isHidden=true
+        retrybutton.isEnabled=false
+        t.text=""
+        _t.text=""
+        timeCount=16
+        timerStart()
+        n = -1
+        _n = -1
     }
 
 

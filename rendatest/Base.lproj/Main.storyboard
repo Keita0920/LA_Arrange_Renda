@@ -44,7 +44,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-Yp-nVs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-Yp-nVs">
                                 <rect key="frame" x="169" y="230" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.86274509799999999" alpha="0.78380102040816324" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,7 +58,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqQ-Wc-9HS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqQ-Wc-9HS" userLabel="_T">
                                 <rect key="frame" x="54" y="156" width="300" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="70"/>
@@ -232,14 +232,42 @@
                                     <action selector="watap" destination="BYZ-38-t0r" eventType="touchUpInside" id="dmP-Zv-8EW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJB-x1-yIQ">
+                                <rect key="frame" x="131" y="414" width="147" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.84597575664520264" green="0.29542313085754124" blue="0.13203422900192566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="RETRY"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="retry" destination="BYZ-38-t0r" eventType="touchUpInside" id="t6o-IA-PZL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="_t" destination="uqQ-Wc-9HS" id="njy-q8-Z6M"/>
+                        <outlet property="_t" destination="uqQ-Wc-9HS" id="z2u-Z8-uk0"/>
+                        <outlet property="abutton" destination="JZA-Ie-4vu" id="1OX-Rg-vB7"/>
+                        <outlet property="habutton" destination="H78-wf-piv" id="tMe-PK-mI6"/>
+                        <outlet property="kabutton" destination="U3F-9J-5ug" id="bLy-5U-ylI"/>
+                        <outlet property="mabutton" destination="fYs-yP-KHG" id="S1w-id-5bl"/>
+                        <outlet property="nabutton" destination="cLk-Y3-36c" id="bnJ-Tx-2f5"/>
+                        <outlet property="rabutton" destination="ht8-yy-hpr" id="30r-hP-Hal"/>
+                        <outlet property="retrybutton" destination="KJB-x1-yIQ" id="MQt-C4-j6s"/>
+                        <outlet property="sabutton" destination="OsZ-Uj-dzt" id="RvA-oM-kBK"/>
                         <outlet property="t" destination="Fen-Yp-nVs" id="mY0-pB-Tfz"/>
+                        <outlet property="tabutton" destination="8I1-Ww-rOE" id="nHj-pO-Dzp"/>
                         <outlet property="timerLabel" destination="Vwd-4G-sp6" id="rPu-l1-myj"/>
+                        <outlet property="wabutton" destination="N9s-qN-6i7" id="BYB-TW-SFF"/>
+                        <outlet property="yabutton" destination="ZuR-Nu-dvv" id="Lf9-BR-V81"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
