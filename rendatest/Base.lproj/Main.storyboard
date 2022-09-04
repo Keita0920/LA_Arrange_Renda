@@ -257,15 +257,19 @@
                         <outlet property="_t" destination="uqQ-Wc-9HS" id="z2u-Z8-uk0"/>
                         <outlet property="abutton" destination="JZA-Ie-4vu" id="1OX-Rg-vB7"/>
                         <outlet property="habutton" destination="H78-wf-piv" id="tMe-PK-mI6"/>
+                        <outlet property="hidari" destination="9KA-lL-dE3" id="k7D-rM-0PG"/>
                         <outlet property="kabutton" destination="U3F-9J-5ug" id="bLy-5U-ylI"/>
                         <outlet property="mabutton" destination="fYs-yP-KHG" id="S1w-id-5bl"/>
+                        <outlet property="migi" destination="XcU-Vl-D8B" id="9qs-u8-aJh"/>
                         <outlet property="nabutton" destination="cLk-Y3-36c" id="bnJ-Tx-2f5"/>
                         <outlet property="rabutton" destination="ht8-yy-hpr" id="30r-hP-Hal"/>
                         <outlet property="retrybutton" destination="KJB-x1-yIQ" id="MQt-C4-j6s"/>
                         <outlet property="sabutton" destination="OsZ-Uj-dzt" id="RvA-oM-kBK"/>
+                        <outlet property="sita" destination="N9V-xy-qH1" id="gIy-Pu-B91"/>
                         <outlet property="t" destination="Fen-Yp-nVs" id="mY0-pB-Tfz"/>
                         <outlet property="tabutton" destination="8I1-Ww-rOE" id="nHj-pO-Dzp"/>
                         <outlet property="timerLabel" destination="Vwd-4G-sp6" id="rPu-l1-myj"/>
+                        <outlet property="ue" destination="AdD-9T-Gll" id="g9q-mO-CcD"/>
                         <outlet property="wabutton" destination="N9s-qN-6i7" id="BYB-TW-SFF"/>
                         <outlet property="yabutton" destination="ZuR-Nu-dvv" id="Lf9-BR-V81"/>
                     </connections>

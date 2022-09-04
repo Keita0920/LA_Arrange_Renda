@@ -26,6 +26,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var rabutton: UIButton!
     @IBOutlet weak var wabutton: UIButton!
     @IBOutlet weak var retrybutton: UIButton!
+    @IBOutlet var ue:UILabel!
+    @IBOutlet var migi:UILabel!
+    @IBOutlet var sita:UILabel!
+    @IBOutlet var hidari:UILabel!
     
     var a:[String] = ["あ","い","う","え","お"]
     var ka:[String] = ["か","き","く","け","こ"]
@@ -40,9 +44,11 @@ class ViewController: UIViewController {
     
     var n:Int = -1
     var _n:Int = -1
+    var index:Int=1
     
     let clearSound=try!AVAudioPlayer(data: NSDataAsset(name: "SE_fanfare")!.data)
     let failureSound=try!AVAudioPlayer(data: NSDataAsset(name: "SE_gameover")!.data)
+    let correctSound=try!AVAudioPlayer(data: NSDataAsset(name: "correct")!.data)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +64,17 @@ class ViewController: UIViewController {
         if n < 4{
             n += 1
             t.text=initial[n]
-            if t.text == "く"{
+            if t.text == "く" && index == 1{
+                ue.text="べ"
+                migi.text="く"
+                sita.text="ち"
+                hidari.text="ぱ"
+                timeCount=16
+                index += 1
+                t.text=""
+                correctSound.play()
+            }
+            if t.text == "お" && index == 3{
                 _t.text="CLEAR"
                 abutton.isEnabled = false
                 kabutton.isEnabled = false
@@ -72,8 +88,8 @@ class ViewController: UIViewController {
                 wabutton.isEnabled = false
                 retrybutton.isHidden=false
                 retrybutton.isEnabled=true
-                clearSound.play()
                 createTimer?.invalidate()
+                clearSound.play()
             }
         }else{
             n = 0
@@ -84,6 +100,16 @@ class ViewController: UIViewController {
         if _n < 2{
             _n += 1
             t.text=initial[_n]
+            if t.text == "ん" && index == 2{
+                ue.text="こ"
+                migi.text="と"
+                sita.text="り"
+                hidari.text="め"
+                timeCount=16
+                index += 1
+                t.text=""
+                correctSound.play()
+            }
         }else{
             _n = 0
             t.text=initial[_n]
@@ -168,6 +194,11 @@ class ViewController: UIViewController {
         timerStart()
         n = -1
         _n = -1
+        ue.text="さ"
+        migi.text="ば"
+        sita.text="ら"
+        hidari.text="は"
+        index=1
     }
 
 
