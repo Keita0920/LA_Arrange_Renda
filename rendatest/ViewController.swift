@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet var migi:UILabel!
     @IBOutlet var sita:UILabel!
     @IBOutlet var hidari:UILabel!
+    @IBOutlet var circle:UIImageView!
     
     var a:[String] = ["あ","い","う","え","お"]
     var ka:[String] = ["か","き","く","け","こ"]
@@ -59,6 +60,7 @@ class ViewController: UIViewController {
         timerLabel.text=""
         retrybutton.isHidden=true
         retrybutton.isEnabled=false
+        circle.isHidden=true
     }
     func tap(initial:inout [String]){
         if n < 4{
@@ -73,6 +75,10 @@ class ViewController: UIViewController {
                 index += 1
                 t.text=""
                 correctSound.play()
+                circle.isHidden=false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self.circle.isHidden=true
+                }
             }
             if t.text == "お" && index == 3{
                 _t.text="CLEAR"
@@ -109,6 +115,10 @@ class ViewController: UIViewController {
                 index += 1
                 t.text=""
                 correctSound.play()
+                circle.isHidden=false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self.circle.isHidden=true
+                }
             }
         }else{
             _n = 0
